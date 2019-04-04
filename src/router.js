@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 // ルート用のコンポーネントを読み込む
-import App from './App.vue'
+import Top from '@/components/Top.vue'
+import Manage from '@/components/Manage.vue'
+import Login from '@/components/Login.vue'
 
 // Vuexと同様で最初にプラグインとして登録
 Vue.use(VueRouter)
@@ -12,9 +14,18 @@ const router = new VueRouter({
   // URLのパスと紐づくコンポーネントをマッピング
   routes: [
     {
-      path: '/app',
-      component: App
+      path: '/',
+      component: Top
+    },
+    {
+      path: '/manage',
+      component: Manage
+    },
+    {
+      path: '/login',
+      component: Login
     }
+
   ]
 })
 // 生成したVueRouterインスタンスをエクスポート
