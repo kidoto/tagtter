@@ -1,8 +1,8 @@
 <template>
 <div id="top">
   <div id="nav">
-      <Header>
-      </Header>
+    <Header>
+    </Header>
   </div>
   <div id="title">
     Tagtter
@@ -54,6 +54,7 @@ export default {
   border: solid 1px #000000;
 
 }
+
 a {
   font: 20px;
   font-weight: bold;
