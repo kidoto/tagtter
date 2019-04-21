@@ -5,7 +5,7 @@
     <img v-bind:src="profile" />
   </span>
   <span v-else>
-    <button type="button" v-on:click="login">button</button>
+    <button type="button" v-on:click="login">login</button>
   </span>
 </div>
 </template>
