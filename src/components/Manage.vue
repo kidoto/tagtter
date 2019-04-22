@@ -8,7 +8,7 @@
       <div id="tags">
         保存済みのタグ
       </div>
-      <div v-for="tag in savedTags">
+      <div id="tag" v-for=" tag in savedTags" v-on:click="showTag(tag)">
         {{tag}}
       </div>
       <input v-model="input" />
@@ -98,7 +98,17 @@ export default {
             this.tagDetail.push(doc.data()["tag"]);
           })
         })
-
+    },
+    showTag: function(input) {
+      this.tagDetail = [];
+      let database = firebase.firestore().collection('tags')
+        .where("user", "==", this.user)
+        .where("id", "==", input)
+        .get().then((querySnapshot) => {
+          querySnapshot.forEach((doc) => {
+            this.tagDetail.push(doc.data()["tag"]);
+          })
+        })
     }
   },
   data() {

@@ -30,7 +30,7 @@ a {
 export default {
   props: ["name"],
   mounted: function() {
-    this.isLogin = this.user !== undefined;
+    this.isLogin = this.name !== undefined;
   },
   data() {
     return {
